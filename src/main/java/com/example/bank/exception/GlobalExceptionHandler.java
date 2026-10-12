@@ -17,7 +17,6 @@ public class GlobalExceptionHandler {
 	public ResponseEntity<ErrorResponse> handleCustomerNotFoundException(CustomerNotFoundException ex) {
 		
 		ErrorResponse errorResponse = new ErrorResponse(HttpStatus.NOT_FOUND.value(), ex.getMessage(), LocalDateTime.now());
-		
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(errorResponse);
 	}
 	
